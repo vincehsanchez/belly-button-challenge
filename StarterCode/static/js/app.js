@@ -11,13 +11,13 @@
 
 // lets use D3 library to read in "samples.json"
 // but why do we have samples.json in the first place if we are using URL?
-const bb_samples_url = 
+const bb_samples = 
 "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";function init() {
-d3.json(bb_samples_url, function (json) {
+d3.json(bb_samples, function (json) {
     //https://stackoverflow.com/questions/22325819/d3-js-get-json-from-url
 });
 
-fetch(dcShowsData)
+fetch(bb_samples)
     .then((response) => response.json())
     .then((data) => {
 //let data = [{
