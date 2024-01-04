@@ -33,6 +33,13 @@ fetch(bb_samples)
 
   //Plotly.newPlot("pie", data, layout);
 //}
+let barData = [{
+    x: Object.keys(venueCount),
+    y: Object.values(venueCount),
+    type: 'bar'
+  }];
+
+
 
 // On change to the DOM, call getData()
 d3.selectAll("#selDataset").on("change", getData);
