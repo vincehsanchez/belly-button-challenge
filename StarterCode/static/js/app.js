@@ -39,7 +39,9 @@ let barData = [{
     type: 'bar'
   }];
 
-
+  Plotly.newPlot('myDivBar', barData, {
+    title: 'Top 10 OTUs in Individuals'
+  });
 
 // On change to the DOM, call getData()
 d3.selectAll("#selDataset").on("change", getData);
