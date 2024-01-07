@@ -8,8 +8,8 @@ d3.json(bbSamples).then(function(data) {
   console.log(data);
 //data loaded, we still need to fetch what we need from it to use for charts
 /////////lets get the samples printed atleast///////
-////const bbSamplesArray = data.samples;//
-////console.log(bbSamplesArray);//works!!//
+const bbSamplesArray = data.samples;//
+console.log(bbSamplesArray);//works!!//
 /////////////////////////////////////////////////////
 //what are the sample_values?? are they IDs? i dont think I can count numbers unless they are unique...
 //BCS says that we need to count the top 10 of each person...so we need to clean up more...
@@ -18,6 +18,13 @@ let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == testSample)
 let bbResult = bbResultArray[0];
 console.log(bbResult);//works!
 //lets get an array for each person
+function popular(roman) {
+  return roman.romanSearchResults > 1000000;
+}
+let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id == sample);
+//^^"sample" not defined for some reason...^^..maybe needs a list first!
+let bbResults = bbResultArrays[0];
+console.log(bbResults);
 
 //nowww we can start counting for EACH person by finding the top 10 highest sample_values
 //I think we can assume that there are no dulicate otu_ids...
