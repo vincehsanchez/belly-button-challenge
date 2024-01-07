@@ -3,9 +3,6 @@
 //BCS says that the json file is good practice and helpful if offline...
 const bbSamples = 
 "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
-// Promise Pending
-const dataPromise = d3.json(bbSamples);
-console.log("Data Promise: ", dataPromise);
 // Fetch the JSON data and console log it
 d3.json(bbSamples).then(function(data) {
   console.log(data);
@@ -15,8 +12,9 @@ const bbSamplesArray = data.samples;
 console.log(bbSamplesArray);//works!!
 //what are the sample_values?? are they IDs? i dont think I can count numbers unless they are unique...
 //BCS says that we need to count the top 10 of each person...so we need to clean up more...
-let resultArray = samples.filter(sampleObj => sampleObj.id == sample);
-let result = resultArray[0];
+let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == sample);
+let bbResult = bbResultArray[0];
+console.log(bbResult);
 //function countUniqueSamples(bbSamplesArray) {
  // const sampleValueCount = {};
   //bbSamplesArray.sample_values.forEach(sample_values =>{
