@@ -18,12 +18,7 @@ let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == testSample)
 let bbResult = bbResultArray[0];
 console.log(bbResult);//works!
 //lets get an array for each person
-  function letsGetEachArray(sample) {
-    let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id == sample);
-    //^^"sample" not defined for some reason...^^..maybe needs a list or function first!
-    let bbResults = bbResultArrays[0];
-    console.log(bbResults);
-  };
+////////////////////
 //nowww we can start counting for EACH person by finding the top 10 highest sample_values
 //I think we can assume that there are no dulicate otu_ids...
 //function countUniqueSamples(bbSamplesArray) {
@@ -36,7 +31,12 @@ console.log(bbResult);//works!
   //return sampleIds.age < 30;
 //}
 });
-
+function letsGetEachArray(sample) {
+  let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id == sample);
+  //^^"sample" not defined for some reason...^^..maybe needs a list or function first!
+  let bbResults = bbResultArrays[0];
+  console.log(bbResults);
+};
 
 
 
