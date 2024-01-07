@@ -13,19 +13,19 @@ d3.json(bbSamples).then(function(data) {
 //lets get the samples printed atleast
 const bbSamplesArray = data.samples;
 console.log(bbSamplesArray);//works!!
-
-//const bbSampleOtuIds = data.samples.
 //what are the sample_values?? are they IDs? i dont think I can count numbers unless they are unique...
-
-function countUniqueSamples(bbSamplesArray) {
-  const sampleValueCount = {};
-  bbSamplesArray.sample_values.forEach(sample_values =>{
+//BCS says that we need to count the top 10 of each person...so we need to clean up more...
+let resultArray = samples.filter(sampleObj => sampleObj.id == sample);
+let result = resultArray[0];
+//function countUniqueSamples(bbSamplesArray) {
+ // const sampleValueCount = {};
+  //bbSamplesArray.sample_values.forEach(sample_values =>{
     //for now we will assume we are counting unique sample values
-    if (countUniqueSamples[])
+   // if (countUniqueSamples[])
 
-  })
-  return sampleIds.age < 30;
-}
+ // })
+  //return sampleIds.age < 30;
+//}
 });
 
 
