@@ -18,14 +18,12 @@ let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == testSample)
 let bbResult = bbResultArray[0];
 console.log(bbResult);//works!
 //lets get an array for each person
-function letsGetEachArray(sample) {
-  return sample.romanSearchResults > 1000000;
-}
-let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id == sample);
-//^^"sample" not defined for some reason...^^..maybe needs a list first!
-let bbResults = bbResultArrays[0];
-console.log(bbResults);
-
+  function letsGetEachArray(sample) {
+    let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id == sample);
+    //^^"sample" not defined for some reason...^^..maybe needs a list or function first!
+    let bbResults = bbResultArrays[0];
+    console.log(bbResults);
+  };
 //nowww we can start counting for EACH person by finding the top 10 highest sample_values
 //I think we can assume that there are no dulicate otu_ids...
 //function countUniqueSamples(bbSamplesArray) {
