@@ -17,6 +17,8 @@ const testSample = 940;
 let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == testSample);
 let bbResult = bbResultArray[0];
 console.log(bbResult);//works!
+//lets get an array for each person
+
 //nowww we can start counting for EACH person by finding the top 10 highest sample_values
 //I think we can assume that there are no dulicate otu_ids...
 //function countUniqueSamples(bbSamplesArray) {
