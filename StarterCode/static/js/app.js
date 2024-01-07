@@ -10,15 +10,24 @@ console.log("Data Promise: ", dataPromise);
 d3.json(bbSamples).then(function(data) {
   console.log(data);
 //data loaded, we still need to fetch what we need from it to use for charts
+//lets get the samples printed atleast
 const bbSamplesArray = data.samples;
 console.log(bbSamplesArray);//works!!
 
 //const bbSampleOtuIds = data.samples.
+//what are the sample_values?? are they IDs? i dont think I can count numbers unless they are unique...
 
-});
-function selectSampleIds(sampleIds) {
+function countUniqueSamples(bbSamplesArray) {
+  const sampleValueCount = {};
+  bbSamplesArray.sample_values.forEach(sample_values =>{
+    //for now we will assume we are counting unique sample values
+    if (countUniqueSamples[])
+
+  })
   return sampleIds.age < 30;
 }
+});
+
 
 
 
