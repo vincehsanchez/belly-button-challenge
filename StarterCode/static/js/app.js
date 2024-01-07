@@ -1,19 +1,26 @@
 // lets use D3 library to read in "samples.json"
 // but why do we have samples.json in the first place if we are using URL?
 //BCS says that the json file is good practice and helpful if offline...
-const bb_samples = 
+const bbSamples = 
 "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 // Promise Pending
-const dataPromise = d3.json(bb_samples);
+const dataPromise = d3.json(bbSamples);
 console.log("Data Promise: ", dataPromise);
 // Fetch the JSON data and console log it
-d3.json(bb_samples).then(function(data) {
+d3.json(bbSamples).then(function(data) {
   console.log(data);
+//data loaded, we still need to fetch what we need from it to use for charts
+const bbSamplesArray = data.samples;
+console.log(bbSamplesArray);
 });
-//data loaded, we still need to fetch it to use for charts
-fetch(bb_samples)
-   .then((response) => response.json())
-   .then((data) => {
+
+
+
+
+
+//fetch(bb_samples)
+  // .then((response) => response.json())
+   //.then((data) => {
 
 ////////////////////
 /////let barData = [{
