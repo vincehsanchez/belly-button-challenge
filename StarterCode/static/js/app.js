@@ -18,8 +18,8 @@ let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == testSample)
 let bbResult = bbResultArray[0];
 console.log(bbResult);//works!
 //lets get an array for each person
-function popular(roman) {
-  return roman.romanSearchResults > 1000000;
+function letsGetEachArray(sample) {
+  return sample.romanSearchResults > 1000000;
 }
 let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id == sample);
 //^^"sample" not defined for some reason...^^..maybe needs a list first!
