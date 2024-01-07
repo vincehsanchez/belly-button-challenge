@@ -10,28 +10,10 @@ console.log("Data Promise: ", dataPromise);
 d3.json(bb_samples).then(function(data) {
   console.log(data);
 });
-//data loaded, now we can make our chart
-
-///////////////////
-//fetch(bb_samples)
- //   .then((response) => response.json())
- //   .then((data) => {
-
-///////////////////////
-
-//let data = [{
-    //values: australia,
-    //labels: labels,
-    //type: "pie"
-  //}];
-
-  //let layout = {
-    //height: 600,
-    //width: 800
-  //};
-
-  //Plotly.newPlot("pie", data, layout);
-//}
+//data loaded, we still need to fetch it to use for charts
+fetch(bb_samples)
+   .then((response) => response.json())
+   .then((data) => {
 
 ////////////////////
 /////let barData = [{
