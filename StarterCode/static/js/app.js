@@ -7,12 +7,14 @@ const bbSamples =
 d3.json(bbSamples).then(function(data) {
   console.log(data);
 //data loaded, we still need to fetch what we need from it to use for charts
-//lets get the samples printed atleast
-const bbSamplesArray = data.samples;
-console.log(bbSamplesArray);//works!!
+/////////lets get the samples printed atleast///////
+////const bbSamplesArray = data.samples;//
+////console.log(bbSamplesArray);//works!!//
+/////////////////////////////////////////////////////
 //what are the sample_values?? are they IDs? i dont think I can count numbers unless they are unique...
 //BCS says that we need to count the top 10 of each person...so we need to clean up more...
-let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == sample);
+const testSample = 940;
+let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == testSample);
 let bbResult = bbResultArray[0];
 console.log(bbResult);
 //function countUniqueSamples(bbSamplesArray) {
