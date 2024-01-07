@@ -11,9 +11,14 @@ d3.json(bbSamples).then(function(data) {
   console.log(data);
 //data loaded, we still need to fetch what we need from it to use for charts
 const bbSamplesArray = data.samples;
-console.log(bbSamplesArray);
-});
+console.log(bbSamplesArray);//works!!
 
+//const bbSampleOtuIds = data.samples.
+
+});
+function selectSampleIds(sampleIds) {
+  return sampleIds.age < 30;
+}
 
 
 
