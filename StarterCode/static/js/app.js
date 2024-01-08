@@ -17,12 +17,12 @@ const testSample = 940;
 let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == testSample);
 let bbResult = bbResultArray[0];
 console.log(bbResult);//works!
-//lets get an array for each person
-let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id == sample); //sugggested by BCS
+//lets get an array for each person...dont neeed to, bbSamplesArray already does...
+//let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id <= 1601); //sugggested by BCS
   //^^"sample" not defined for some reason...^^..maybe needs a list or function first!
-let bbResults = bbResultArrays[0];//suggested by BCS
-console.log(bbResults);//suggested by BCS
-////////////////////
+//let bbResults = bbResultArrays;//suggested by BCS
+//console.log(bbResults);//suggested by BCS
+////////////////////^^bbSamplesArray already does...^^
 //nowww we can start counting for EACH person by finding the top 10 highest sample_values
 //I think we can assume that there are no dulicate otu_ids...
 //function countUniqueSamples(bbSamplesArray) {
