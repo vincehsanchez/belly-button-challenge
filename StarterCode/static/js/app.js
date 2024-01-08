@@ -33,10 +33,10 @@ console.log(bbResult);//works!
 });
 function letsGetEachArray(sample) {
   d3.json(bbSamples).then((data) => { //vscode expected "=>"
-  let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id == sample);
+  let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id == sample); //sugggested by BCS
   //^^"sample" not defined for some reason...^^..maybe needs a list or function first!
-  let bbResults = bbResultArrays[0];
-  console.log(bbResults);
+  let bbResults = bbResultArrays[0];//suggested by BCS
+  console.log(bbResults);//suggested by BCS
   });//d3 brace and "then" parenthesis
 };//for lgea function
 
