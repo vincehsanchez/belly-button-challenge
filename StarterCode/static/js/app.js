@@ -1,3 +1,15 @@
+// Initializes the page with a default plot
+function init() {
+  data = [{
+    x: [1, 2, 3, 4, 5],
+    y: [1, 2, 4, 8, 16] }];
+
+  Plotly.newPlot("plot", data);
+}
+
+// Call updatePlotly() when a change takes place to the DOM
+d3.selectAll("#selDataset").on("change", updatePlotly);
+//we need to make dropdown function first 
 // lets use D3 library to read in "samples.json"
 // but why do we have samples.json in the first place if we are using URL?
 //BCS says that the json file is good practice and helpful if offline...
@@ -30,7 +42,6 @@ console.log(bbResult);//works!
   //bbSamplesArray.sample_values.forEach(sample_values =>{
     //for now we will assume we are counting unique sample values
    // if (countUniqueSamples[])
-
  // })
   //return sampleIds.age < 30;
 //}
