@@ -1,9 +1,9 @@
 // Initializes the page with a default plot
 function init() {
-// Call updatePlotly() when a change takes place to the DOM
+// Call selected data
 d3.selectAll("#selDataset");//.on("change", updatePlotly);
 }
-//^^we need to make dropdown function first^^ 
+//^^we need to make dropdown function first^^
 // lets use D3 library to read in "samples.json"
 // but why do we have samples.json in the first place if we are using URL?
 //BCS says that the json file is good practice and helpful if offline...
@@ -19,7 +19,7 @@ console.log(bbSamplesArray);//works!!//
 /////////////////////////////////////////////////////
 //what are the sample_values?? are they IDs? i dont think I can count numbers unless they are unique...
 //BCS says that we need to count the top 10 of each person...so we need to clean up more...
-const testSample = 940;
+const testSample = 940;//the numberIDS are the names!!
 let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == testSample);
 let bbResult = bbResultArray[0];
 console.log(bbResult);//works!
