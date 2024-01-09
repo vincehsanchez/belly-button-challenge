@@ -1,7 +1,7 @@
 // Initializes the page with a default plot
 function init() {
 // Call updatePlotly() when a change takes place to the DOM
-d3.selectAll("#selDataset").on("change", updatePlotly);
+d3.selectAll("#selDataset");//.on("change", updatePlotly);
 }
 //^^we need to make dropdown function first^^ 
 // lets use D3 library to read in "samples.json"
