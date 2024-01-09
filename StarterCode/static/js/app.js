@@ -10,11 +10,13 @@ d3.json(bbData).then(function(data) {
   console.log(data);
   //lets get names
   const bbNames = data.names;//why am i getting a red underline? parenthesis was missing..
-
+  console.log(bbNames);//got em
 })
+bbNames.forEach(sample_values =>{
 };//why does it not show? got it!! needed to "start" our function "init"
-init();
+init(); //keep this here to make sure its running...
 //^^we need to make dropdown function first^^
+////////////////////////////////////////////////////////////////////////////////////////////////////
 // lets use D3 library to read in "samples.json"
 // but why do we have samples.json in the first place if we are using URL?
 //BCS says that the json file is good practice and helpful if offline...
