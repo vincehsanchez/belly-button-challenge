@@ -2,6 +2,13 @@
 function init() {
 // Call selected data
 d3.selectAll("#selDataset");//.on("change", updatePlotly);
+//cannot redeclare variables, and we know the numberIDs are the names lets make a name variable...
+const bbData = 
+"https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
+// Fetch the JSON data and console log it
+d3.json(bbData).then(function(data) => {
+  const bbNames = data.names;
+}
 }
 //^^we need to make dropdown function first^^
 // lets use D3 library to read in "samples.json"
