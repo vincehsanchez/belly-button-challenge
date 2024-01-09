@@ -6,10 +6,14 @@ d3.selectAll("#selDataset");//.on("change", updatePlotly);
 const bbData = 
 "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 // Fetch the JSON data and console log it
-d3.json(bbData).then(function(data) => {
-  const bbNames = data.names;
-}
-}
+d3.json(bbData).then(function(data) {
+  console.log(data);
+  //lets get names
+  const bbNames = data.names;//why am i getting a red underline? parenthesis was missing..
+
+})
+};//why does it not show? got it!! needed to "start" our function "init"
+init();
 //^^we need to make dropdown function first^^
 // lets use D3 library to read in "samples.json"
 // but why do we have samples.json in the first place if we are using URL?
