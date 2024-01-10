@@ -26,7 +26,7 @@ d3.json(bbData).then(function(data) {
 // Use D3 to select the dropdown menu
 function optionChanged() {
     //Assign the value of the dropdown menu option to a variable
-    //let dropdownMenu = d3.select("#selDataset");
+    let dropdownMenu = d3.select("#selDataset");
     
 };
 init(); //keep this here to make sure its running...
