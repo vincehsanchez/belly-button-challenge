@@ -11,9 +11,11 @@ d3.json(bbData).then(function(data) {
   //lets get names
   const bbNames = data.names;//why am i getting a red underline? parenthesis was missing..
   console.log(bbNames);//got em
+  //get through each name
+  bbNames.forEach(bbSample =>{
+    console.log(bbSample);
 })
-bbNames.forEach(sample_values =>{
-};//why does it not show? got it!! needed to "start" our function "init"
+})};//why does it not show? got it!! needed to "start" our function "init"
 init(); //keep this here to make sure its running...
 //^^we need to make dropdown function first^^
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -124,5 +126,3 @@ console.log(bbResult);//works!
 //function updatePlotly(newdata) {
   //Plotly.restyle("pie", "values", [newdata]);
 //}
-
-//init();
