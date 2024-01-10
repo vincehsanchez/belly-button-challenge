@@ -1,8 +1,8 @@
 // Initializes the page with a default plot
 function init() {
 // Call selected data
-d3.selectAll("#selDataset");//.on("change", updateParticipants);..do not need, we have "optionchanged"
-//^need ".on(change" to let dropdown work.^
+const dropdownMenu = d3.selectAll("#selDataset");//.on("change", updateParticipants);
+//^..do not need .on(change", we have "optionchanged"!..for dropdown menu to work^
 //cannot redeclare variables, and we know the numberIDs are the names lets make a name variable...
 const bbData = 
 "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
@@ -22,12 +22,12 @@ d3.json(bbData).then(function(data) {
 
 })
 })};//why does it not show? got it!! needed to "start" our function "init"
-//inorder for our drop down to show each participant we need a fucntin(updateParticipants) defined
+//inorder for our drop down to show each participant will use optionchanged that was provided.
 // Use D3 to select the dropdown menu
-function updateParticipants() {
+function optionChanged() {
     //Assign the value of the dropdown menu option to a variable
-    let dropdownMenu = d3.select("#selDataset");
-    let selectedParticipant = dropdownMenu.property("value") //declared but value never read?
+    //let dropdownMenu = d3.select("#selDataset");
+    
 };
 init(); //keep this here to make sure its running...
 //^^we need to make dropdown function first^^
