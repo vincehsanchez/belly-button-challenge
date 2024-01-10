@@ -13,7 +13,7 @@ d3.json(bbData).then(function(data) {
   console.log(bbNames);//got em
   //get through each name
   bbNames.forEach(bbSample =>{
-    console.log(bbSample);
+    console.log(bbSample); //why only names? i need names and info, names only has names...
 })
 })};//why does it not show? got it!! needed to "start" our function "init"
 init(); //keep this here to make sure its running...
