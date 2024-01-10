@@ -1,7 +1,8 @@
 // Initializes the page with a default plot
 function init() {
 // Call selected data
-d3.selectAll("#selDataset");//.on("change", updatePlotly);
+d3.selectAll("#selDataset").on("change", updateParticipants);
+//^need ".on(change" to let dropdown work.^
 //cannot redeclare variables, and we know the numberIDs are the names lets make a name variable...
 const bbData = 
 "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
@@ -9,13 +10,25 @@ const bbData =
 d3.json(bbData).then(function(data) {
   console.log(data);
   //lets get names
-  const bbNames = data.names;//why am i getting a red underline? parenthesis was missing..
-  console.log(bbNames);//got em
+  const bbParticipants = data.metadata;//why am i getting a red underline? parenthesis was missing..
+  //^^changed to metadata because the info for each and not only names^^
+  console.log(bbParticipants);//got em
   //get through each name
-  bbNames.forEach(bbSample =>{
-    console.log(bbSample); //why only names? i need names and info, names only has names...
+  bbParticipants.forEach(bbParticipantDemos =>{
+    console.log(bbParticipantDemos); //why only names? i need names and info, names only has names...metadata!
+  
+  //we want to show the nameIds to choose from bbParticipantDemo
+  //let bbDataset = dropdownMenu.property("value");
+
 })
 })};//why does it not show? got it!! needed to "start" our function "init"
+//inorder for our drop down to show each participant we need a fucntin(updateParticipants) defined
+// Use D3 to select the dropdown menu
+function updateParticipants() {
+    //Assign the value of the dropdown menu option to a variable
+    let dropdownMenu = d3.select("#selDataset");
+    let selectedParticipant = dropdownMenu.property("value")
+};
 init(); //keep this here to make sure its running...
 //^^we need to make dropdown function first^^
 ////////////////////////////////////////////////////////////////////////////////////////////////////
