@@ -1,7 +1,7 @@
 // Initializes the page with a default plot
 function init() {
 // Call selected data
-d3.selectAll("#selDataset").on("change", updateParticipants);
+d3.selectAll("#selDataset");//.on("change", updateParticipants);..do not need, we have "optionchanged"
 //^need ".on(change" to let dropdown work.^
 //cannot redeclare variables, and we know the numberIDs are the names lets make a name variable...
 const bbData = 
@@ -27,7 +27,7 @@ d3.json(bbData).then(function(data) {
 function updateParticipants() {
     //Assign the value of the dropdown menu option to a variable
     let dropdownMenu = d3.select("#selDataset");
-    let selectedParticipant = dropdownMenu.property("value")
+    let selectedParticipant = dropdownMenu.property("value") //declared but value never read?
 };
 init(); //keep this here to make sure its running...
 //^^we need to make dropdown function first^^
