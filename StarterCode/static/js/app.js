@@ -20,9 +20,9 @@ d3.json(bbData).then(function(data) {
     dropdownMenu.append("option")//option is the elemnt/item of one thing in dropdown menu.
     //^gave me something to click!!^^
     //https://d3js.org/d3-selection/modifying
-                .text(bbParticipants.id)//what wwe can click from
+                .text(bbParticipantDemos.id)//what wwe can click from
                 //dropdown shows!! but no bbIDs yet...
-                .attr("value", bbParticipants.id);//holds/choice of bbID, but no text yet...
+                .attr("value", bbParticipantDemos.id);//holds/choice of bbID, but no text yet...I was calling wrogn variable.
 
   //we want to show the nameIds to choose from bbParticipantDemo
   //let bbDataset = dropdownMenu.property("value");
@@ -32,10 +32,7 @@ d3.json(bbData).then(function(data) {
 //inorder for our drop down to show each participant will use optionchanged that was provided.
 // Use D3 to select the dropdown menu
 function optionChanged() {
-    //Assign the value of the dropdown menu option to a variable
-   //// let dropdownMenu = d3.select("#selDataset");
-     // Assign the value of the dropdown menu option to a variable
-    //////let dataset = dropdownMenu.property("value");
+    //^^i guess this^^ is just a place holder, because what we need it to do is in code above.
     
 };
 init(); //keep this here to make sure its running...
