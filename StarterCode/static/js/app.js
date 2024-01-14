@@ -17,10 +17,10 @@ d3.json(bbData).then(function(data) {
   bbParticipants.forEach(bbParticipantDemos =>{
     console.log(bbParticipantDemos); //why only names? i need names and info, names only has names...metadata!
     ///data.metadata.id if we need to get the BBID...bbParticipants.id...
-    dropdownMenu.append()
+    dropdownMenu.append("option")//option is the elemnt/item of one thing in dropdown menu.
     //https://d3js.org/d3-selection/modifying
-                .text()
-                .attr()
+                .text()//we want the id to select from
+                .attr()//
 
   //we want to show the nameIds to choose from bbParticipantDemo
   //let bbDataset = dropdownMenu.property("value");
