@@ -23,10 +23,6 @@ d3.json(bbData).then(function(data) {
                 .text(bbParticipantDemos.id)//what wwe can click from
                 //dropdown shows!! but no bbIDs yet...I was calling wrong variable!
                 .attr("value", bbParticipantDemos.id);//holds/choice of bbID, but no text yet...works!
-
-  //we want to show the nameIds to choose from bbParticipantDemo
-  //let bbDataset = dropdownMenu.property("value");
-
 })
 })};//why does it not show? got it!! needed to "start" our function "init"
 //inorder for our drop down to show each participant will use optionchanged that was provided.
