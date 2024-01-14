@@ -22,7 +22,7 @@ d3.json(bbData).then(function(data) {
     //https://d3js.org/d3-selection/modifying
                 .text(bbParticipants.id)//what wwe can click from
                 //dropdown shows!! but no bbIDs yet...
-                .attr()//
+                .attr("value", bbParticipants.id);//holds/choice of bbID, but no text yet...
 
   //we want to show the nameIds to choose from bbParticipantDemo
   //let bbDataset = dropdownMenu.property("value");
