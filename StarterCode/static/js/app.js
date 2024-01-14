@@ -21,6 +21,7 @@ d3.json(bbData).then(function(data) {
     //^gave me something to click!!^^
     //https://d3js.org/d3-selection/modifying
                 .text(bbParticipants.id)//what wwe can click from
+                //dropdown shows!! but no bbIDs yet...
                 .attr()//
 
   //we want to show the nameIds to choose from bbParticipantDemo
