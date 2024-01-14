@@ -16,7 +16,7 @@ d3.json(bbData).then(function(data) {
   //get through each name
   bbParticipants.forEach(bbParticipantDemos =>{
     console.log(bbParticipantDemos); //why only names? i need names and info, names only has names...metadata!
-  
+    ///data.metadata.id if we need to get the BBID
   //we want to show the nameIds to choose from bbParticipantDemo
   //let bbDataset = dropdownMenu.property("value");
 
@@ -26,7 +26,9 @@ d3.json(bbData).then(function(data) {
 // Use D3 to select the dropdown menu
 function optionChanged() {
     //Assign the value of the dropdown menu option to a variable
-    let dropdownMenu = d3.select("#selDataset");
+   //// let dropdownMenu = d3.select("#selDataset");
+     // Assign the value of the dropdown menu option to a variable
+    //////let dataset = dropdownMenu.property("value");
     
 };
 init(); //keep this here to make sure its running...
