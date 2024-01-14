@@ -18,8 +18,9 @@ d3.json(bbData).then(function(data) {
     console.log(bbParticipantDemos); //why only names? i need names and info, names only has names...metadata!
     ///data.metadata.id if we need to get the BBID...bbParticipants.id...
     dropdownMenu.append("option")//option is the elemnt/item of one thing in dropdown menu.
+    //^gave me something to click!!^^
     //https://d3js.org/d3-selection/modifying
-                .text()//we want the id to select from
+                .text(bbParticipants.id)//what wwe can click from
                 .attr()//
 
   //we want to show the nameIds to choose from bbParticipantDemo
