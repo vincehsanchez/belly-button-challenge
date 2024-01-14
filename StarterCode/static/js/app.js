@@ -19,6 +19,8 @@ d3.json(bbData).then(function(data) {
     ///data.metadata.id if we need to get the BBID...bbParticipants.id...
     dropdownMenu.append()
     //https://d3js.org/d3-selection/modifying
+                .text()
+                .attr()
 
   //we want to show the nameIds to choose from bbParticipantDemo
   //let bbDataset = dropdownMenu.property("value");
