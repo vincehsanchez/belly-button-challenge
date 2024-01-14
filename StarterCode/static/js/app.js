@@ -21,8 +21,8 @@ d3.json(bbData).then(function(data) {
     //^gave me something to click!!^^
     //https://d3js.org/d3-selection/modifying
                 .text(bbParticipantDemos.id)//what wwe can click from
-                //dropdown shows!! but no bbIDs yet...
-                .attr("value", bbParticipantDemos.id);//holds/choice of bbID, but no text yet...I was calling wrogn variable.
+                //dropdown shows!! but no bbIDs yet...I was calling wrong variable!
+                .attr("value", bbParticipantDemos.id);//holds/choice of bbID, but no text yet...works!
 
   //we want to show the nameIds to choose from bbParticipantDemo
   //let bbDataset = dropdownMenu.property("value");
