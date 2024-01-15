@@ -36,16 +36,18 @@ function optionChanged(chosenParticipant) {
       const bbParticipants = data.metadata;
       //now we can use filter!
       const selectedParticipant = bbParticipants.filter(participant => participant.id == chosenParticipant);
-      //now we tell function what to do
+      //now we tell function what to do..or call other function
       showDemographics(selectedParticipant)
 })};
 init(); //keep this here to make sure its running...
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //lets get demographics
-function showDemographics() {
-d3.json(bbData).then(function(data) {
+function showDemographics(participant) {//using chosen participant value from function before
+  const bbDemoInfoBody = d3.select("#sample-metadata");//where i want it to show
+  //when we change participant, we clear whats there before
+  //d3.json(bbData).then(function(data) {
   //lets get demographics
-  const bbParticipantDemo = data.metadata;
+  //const bbParticipantDemo = data.metadata;
 })
 };
 // Fetch the JSON data and console log it
