@@ -1,3 +1,6 @@
+// lets use D3 library to read in "samples.json"
+// but why do we have samples.json in the first place if we are using URL?
+//BCS says that the json file is good practice and helpful if offline...
 // Initializes the page with a default plot
 function init() {
 // Call selected data
@@ -33,9 +36,7 @@ function optionChanged() {
 init(); //keep this here to make sure its running...
 //^^we need to make dropdown function first^^
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// lets use D3 library to read in "samples.json"
-// but why do we have samples.json in the first place if we are using URL?
-//BCS says that the json file is good practice and helpful if offline...
+
 const bbSamples = 
 "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 // Fetch the JSON data and console log it
