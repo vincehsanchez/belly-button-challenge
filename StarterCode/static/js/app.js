@@ -34,7 +34,6 @@ function optionChanged() {
     //^^i guess this^^ is just a place holder, because what we need it to do is in code above.
 };
 init(); //keep this here to make sure its running...
-//^^we need to make dropdown function first^^
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //lets get demographics
 function showDemographics() {}
@@ -46,7 +45,7 @@ d3.json(bbData).then(function(data) {
   console.log(bbParticipants);//got em
   //get through each name
   bbParticipants.forEach(bbParticipantDemos =>{
-    console.log(bbParticipantDemos); //why only names? i need names and info, names only has names...metadata!
+    console.log(bbParticipantDemos);
 })
 }
 // Fetch the JSON data and console log it
