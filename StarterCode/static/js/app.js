@@ -45,6 +45,13 @@ init(); //keep this here to make sure its running...
 function showDemographics(participant) {//using chosen participant value from function before
   const bbDemoInfoBody = d3.select("#sample-metadata");//where i want it to show
   //when we change participant, we clear whats there before
+  bbDemoInfoBody.html("");
+  //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+  //we want all contents of selected pariticipant
+  Object.entries().forEach([key,value] =>{
+    //key and value for each participant
+    bbDemoInfoBody.append().text();
+  });
   //d3.json(bbData).then(function(data) {
   //lets get demographics
   //const bbParticipantDemo = data.metadata;
