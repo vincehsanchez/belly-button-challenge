@@ -29,7 +29,6 @@ d3.json(bbData).then(function(data) {
 // Use D3 to select the dropdown menu
 function optionChanged() {
     //^^i guess this^^ is just a place holder, because what we need it to do is in code above.
-    
 };
 init(); //keep this here to make sure its running...
 //^^we need to make dropdown function first^^
