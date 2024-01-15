@@ -36,9 +36,19 @@ function optionChanged() {
 init(); //keep this here to make sure its running...
 //^^we need to make dropdown function first^^
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const bbSamples = 
-"https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
+//lets get demographics
+function showDemographics() {}
+d3.json(bbData).then(function(data) {
+  console.log(data);
+  //lets get names
+  const bbParticipants = data.metadata;//why am i getting a red underline? parenthesis was missing..
+  //^^changed to metadata because the info for each and not only names^^
+  console.log(bbParticipants);//got em
+  //get through each name
+  bbParticipants.forEach(bbParticipantDemos =>{
+    console.log(bbParticipantDemos); //why only names? i need names and info, names only has names...metadata!
+})
+}
 // Fetch the JSON data and console log it
 d3.json(bbSamples).then(function(data) {
   console.log(data);
