@@ -50,7 +50,8 @@ function showDemographics(participant) {//using chosen participant value from fu
   //we want all contents of selected pariticipant
   Object.entries().forEach([key,value] =>{
     //key and value for each participant
-    bbDemoInfoBody.append().text();
+    //"option" to tell D3 we want it to add space for data to show
+    bbDemoInfoBody.append("option").text();
   });
   //d3.json(bbData).then(function(data) {
   //lets get demographics
