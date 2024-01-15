@@ -27,24 +27,26 @@ d3.json(bbData).then(function(data) {
 })};//why does it not show? got it!! needed to "start" our function "init"
 //inorder for our drop down to show each participant will use optionchanged that was provided.
 // Use D3 to select the dropdown menu
-function optionChanged() {
-    //^^i guess this^^ is just a place holder, because what we need it to do is in code above.
-};
+function optionChanged(chosenParticipant) {
+    //this helps us choose and change our selection!
+    const bbData = 
+    "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
+    d3.json(bbData).then(function(data) {
+      //fetching data
+      const bbParticipants = data.metadata;
+      //now we can use filter!
+      const selectedParticipant = bbParticipants.filter(participant => participant.id == chosenParticipant);
+
+})};
 init(); //keep this here to make sure its running...
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //lets get demographics
 function showDemographics() {
 d3.json(bbData).then(function(data) {
-  console.log(data);
-  //lets get names
-  const bbParticipants = data.metadata;//why am i getting a red underline? parenthesis was missing..
-  //^^changed to metadata because the info for each and not only names^^
-  console.log(bbParticipants);//got em
-  //get through each name
-  bbParticipants.forEach(bbParticipantDemos =>{
-    console.log(bbParticipantDemos);
+  //lets get demographics
+  const bbParticipantDemo = data.metadata;
 })
-})};
+};
 // Fetch the JSON data and console log it
 d3.json(bbSamples).then(function(data) {
   console.log(data);
