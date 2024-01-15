@@ -36,7 +36,8 @@ function optionChanged(chosenParticipant) {
       const bbParticipants = data.metadata;
       //now we can use filter!
       const selectedParticipant = bbParticipants.filter(participant => participant.id == chosenParticipant);
-
+      //now we tell function what to do
+      showDemographics(selectedParticipant)
 })};
 init(); //keep this here to make sure its running...
 ////////////////////////////////////////////////////////////////////////////////////////////////////
