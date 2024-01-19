@@ -39,19 +39,20 @@ function optionChanged(chosenParticipant) {
       const selectedParticipant = bbParticipants.filter(participant => participant.id == chosenParticipant);
       //now we tell function what to do..or call other function
       showDemographics(selectedParticipant[0])
+      //countUniqueSamples(selectedParticipantSample)
       //^demos dont show..change to [0]..the array format makes us change how to pass object!
 });
 };//move brace here to make code sound
 init(); //keep this here to make sure its running...
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //lets get demographics
-function showDemographics(participant) {//using chosen participant value from function before
+function showDemographics(chosenParticipant) {//using chosen participant value from function before
   const bbDemoInfoBody = d3.select("#sample-metadata");//where i want it to show
   //when we change participant, we clear whats there before
   bbDemoInfoBody.html("");
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
   //we want all contents of selected pariticipant
-  Object.entries(participant).forEach(([key,value]) =>{//missing parenthesis
+  Object.entries(chosenParticipant).forEach(([key,value]) =>{//missing parenthesis
     //"Uncaught (in promise) TypeError: Cannot convert undefined or null to object"
     //^forgot to designate object!^
     //console.log(participant)//lets see why only "0" is showing
@@ -67,15 +68,20 @@ function showDemographics(participant) {//using chosen participant value from fu
 ;//brace removed here to make code sound.
 //nowww we can start counting for EACH person by finding the top 10 highest sample_values
 //I think we can assume that there are no dulicate otu_ids...per BCS
+function countUniqueSamples(chosenParticipantSample) {
 const bbData = 
     "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
-    d3.json(bbData).then(function(data) {
-      //fetching data
-      const bbParticipants = data.samples;
-      //i did need the stuff i deleted..thought it was a dead end...
-      
+    d3.json(bbData).then((data) =>{
+    //fetching data
+    const bbParticipantSamples = data.samples;
+    //i did need the stuff i deleted..thought it was a dead end...
+    const bbParticipants = data.names;
+    //metadata objects have 0 in front..names and samples have unique number..so do we use names for samples?
+    console.log(bbParticipantSamples)
     console.log(bbParticipants)
-    });
+    let selectedParticipantSample = data.samples.filter(sampleObj => sampleObj.id == chosenParticipantSample);
+    console.log(selectedParticipantSample)
+    })};
 //function countUniqueSamples(bbSamplesArray) {
  // const sampleValueCount = {};
  // bbSamplesArray.sample_values.forEach(sample_values =>{
