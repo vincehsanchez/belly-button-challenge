@@ -65,21 +65,24 @@ function showDemographics(participant) {//using chosen participant value from fu
   //const bbParticipantDemo = data.metadata;
 }//parenthesis removed here to make code sound
 ;//brace removed here to make code sound.
-
-//let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id <= 1601); //sugggested by BCS
-  //^^"sample" not defined for some reason...^^..maybe needs a list or function first!
-//let bbResults = bbResultArrays;//suggested by BCS
-//console.log(bbResults);//suggested by BCS
-////////////////////^^bbSamplesArray already does...^^
 //nowww we can start counting for EACH person by finding the top 10 highest sample_values
-//I think we can assume that there are no dulicate otu_ids...
+//I think we can assume that there are no dulicate otu_ids...per BCS
+const bbData = 
+    "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
+    d3.json(bbData).then(function(data) {
+      //fetching data
+      const bbParticipants = data.samples;
+      //i did need the stuff i deleted..thought it was a dead end...
+    
+    console.log(bbParticipants)
+    });
 //function countUniqueSamples(bbSamplesArray) {
  // const sampleValueCount = {};
-  //bbSamplesArray.sample_values.forEach(sample_values =>{
+ // bbSamplesArray.sample_values.forEach(sample_values =>{
     //for now we will assume we are counting unique sample values
-   // if (countUniqueSamples[])
+ //   if (countUniqueSamples[])
  // })
-  //return sampleIds.age < 30;
+ // return sampleIds.age < 30;
 //}
 //function letsGetEachArray(sample) {
 //d3.json(bbSamples).then((data) => { //vscode expected "=>"
@@ -89,7 +92,14 @@ function showDemographics(participant) {//using chosen participant value from fu
 //console.log(bbResults);//suggested by BCS
   //});//d3 brace and "then" parenthesis
 //};//for lgea function
-
+//lets get some charts going
+//function bellyButtonCharts(participant) {
+  //const bb
+//}//for function bbcharts
+//let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id <= 1601); //sugggested by BCS
+//let bbResults = bbResultArrays;//suggested by BCS
+//console.log(bbResults);//suggested by BCS
+////////////////////^^bbSamplesArray already does...^^
 
 
 
