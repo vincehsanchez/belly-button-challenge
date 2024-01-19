@@ -54,7 +54,7 @@ function showDemographics(participant) {//using chosen participant value from fu
   Object.entries(participant).forEach(([key,value]) =>{//missing parenthesis
     //"Uncaught (in promise) TypeError: Cannot convert undefined or null to object"
     //^forgot to designate object!^
-    console.log(participant)//lets see why only "0" is showing
+    //console.log(participant)//lets see why only "0" is showing
     //key and value for each participant
     //"option" to tell D3 we want it to add space for data to show
     bbDemoInfoBody.append("p").text(`${key}:${value}`);//changed "option" to "p" because we dont need another dropdown
@@ -65,21 +65,7 @@ function showDemographics(participant) {//using chosen participant value from fu
   //const bbParticipantDemo = data.metadata;
 }//parenthesis removed here to make code sound
 ;//brace removed here to make code sound.
-// Fetch the JSON data and console log it
-d3.json(bbSamples).then(function(data) {
-  console.log(data);
-//data loaded, we still need to fetch what we need from it to use for charts
-/////////lets get the samples printed atleast///////
-const bbSamplesArray = data.samples;//
-console.log(bbSamplesArray);//works!!//
-/////////////////////////////////////////////////////
-//what are the sample_values?? are they IDs? i dont think I can count numbers unless they are unique...
-//BCS says that we need to count the top 10 of each person...so we need to clean up more...
-const testSample = 940;//the numberIDS are the names!!
-let bbResultArray = data.samples.filter(sampleObj => sampleObj.id == testSample);
-let bbResult = bbResultArray[0];
-console.log(bbResult);//works!
-//lets get an array for each person...dont neeed to, bbSamplesArray already does...
+
 //let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id <= 1601); //sugggested by BCS
   //^^"sample" not defined for some reason...^^..maybe needs a list or function first!
 //let bbResults = bbResultArrays;//suggested by BCS
@@ -95,7 +81,6 @@ console.log(bbResult);//works!
  // })
   //return sampleIds.age < 30;
 //}
-});
 //function letsGetEachArray(sample) {
 //d3.json(bbSamples).then((data) => { //vscode expected "=>"
 //let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id == sample); //sugggested by BCS
