@@ -23,8 +23,9 @@ d3.json(bbData).then(function(data) {
                 .text(bbParticipantDemos.id)//what wwe can click from
                 //dropdown shows!! but no bbIDs yet...I was calling wrong variable!
                 .attr("value", bbParticipantDemos.id);//holds/choice of bbID, but no text yet...works!
-})
-})};//why does it not show? got it!! needed to "start" our function "init"
+});//missing a semicolon
+});//why does it not show? got it!! needed to "start" our function "init"
+};
 //inorder for our drop down to show each participant will use optionchanged that was provided.
 // Use D3 to select the dropdown menu
 function optionChanged(chosenParticipant) {
@@ -38,7 +39,8 @@ function optionChanged(chosenParticipant) {
       const selectedParticipant = bbParticipants.filter(participant => participant.id == chosenParticipant);
       //now we tell function what to do..or call other function
       showDemographics(selectedParticipant)
-})};
+});
+};//move brace here to make code sound
 init(); //keep this here to make sure its running...
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //lets get demographics
