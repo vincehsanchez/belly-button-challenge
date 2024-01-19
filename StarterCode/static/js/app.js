@@ -12,7 +12,7 @@ const bbData =
 // Fetch the JSON data and console log it
 d3.json(bbData).then(function(data) {
   //lets get names
-  const bbParticipants = data.metadata;//why am i getting a red underline? parenthesis was missing..
+  const bbParticipants = data.metadata;//why red underline? parenthesis was missing..
   //^^changed to metadata because the info for each and not only names^^
   //get through each name
   bbParticipants.forEach(bbParticipantDemos =>{
@@ -38,7 +38,8 @@ function optionChanged(chosenParticipant) {
       //now we can use filter!
       const selectedParticipant = bbParticipants.filter(participant => participant.id == chosenParticipant);
       //now we tell function what to do..or call other function
-      showDemographics(selectedParticipant)
+      showDemographics(selectedParticipant[0])
+      //^demos dont show..change to [0]..the array format makes us change how to pass object!
 });
 };//move brace here to make code sound
 init(); //keep this here to make sure its running...
@@ -53,6 +54,7 @@ function showDemographics(participant) {//using chosen participant value from fu
   Object.entries(participant).forEach(([key,value]) =>{//missing parenthesis
     //"Uncaught (in promise) TypeError: Cannot convert undefined or null to object"
     //^forgot to designate object!^
+    console.log(participant)//lets see why only "0" is showing
     //key and value for each participant
     //"option" to tell D3 we want it to add space for data to show
     bbDemoInfoBody.append("p").text(`${key}:${value}`);//changed "option" to "p" because we dont need another dropdown
