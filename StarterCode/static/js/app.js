@@ -78,7 +78,16 @@ function showUniqueSamples(selectedParticipantSample) {
     //looks good!
   //now we slice!
   const top10SampleValues = selectedParticipantSample.sample_values.slice(0,10);
-  console.log(top10SampleValues);
+  //console.log(top10SampleValues); works!
+  let barData = [{
+    x: Object.keys(sampleValueID),
+    y: Object.values(top10SampleValues),
+    type: 'bar'
+ }];
+
+  Plotly.newPlot('myDivBar', barData, {
+    title: 'Top 10 OTUs in Individuals'
+  });
   })};
 
 const bbData = 
