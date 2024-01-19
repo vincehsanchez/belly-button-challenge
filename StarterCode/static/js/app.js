@@ -56,7 +56,7 @@ function showDemographics(participant) {//using chosen participant value from fu
     //key and value for each participant
     //"option" to tell D3 we want it to add space for data to show
     bbDemoInfoBody.append("p").text(`${key}:${value}`);//changed "option" to "p" because we dont need another dropdown
-    //nothing shows, 
+    //nothing...wait! 0:[object Object]
   });
   //d3.json(bbData).then(function(data) {
   //lets get demographics
