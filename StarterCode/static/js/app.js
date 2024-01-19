@@ -73,7 +73,7 @@ const bbData =
       //fetching data
       const bbParticipants = data.samples;
       //i did need the stuff i deleted..thought it was a dead end...
-    
+      
     console.log(bbParticipants)
     });
 //function countUniqueSamples(bbSamplesArray) {
@@ -93,7 +93,7 @@ const bbData =
   //});//d3 brace and "then" parenthesis
 //};//for lgea function
 //lets get some charts going
-//function bellyButtonCharts(participant) {
+//function bellyButtonCharts(chosenParticipant) {
   //const bb
 //}//for function bbcharts
 //let bbResultArrays = data.samples.filter(sampleObj => sampleObj.id <= 1601); //sugggested by BCS
