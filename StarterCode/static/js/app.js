@@ -48,16 +48,18 @@ function showDemographics(participant) {//using chosen participant value from fu
   bbDemoInfoBody.html("");
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
   //we want all contents of selected pariticipant
-  Object.entries().forEach([key,value] =>{
+  Object.entries().forEach(([key,value]) =>{//missing parenthesis
+    //"Uncaught (in promise) TypeError: Cannot convert undefined or null to object"
     //key and value for each participant
     //"option" to tell D3 we want it to add space for data to show
-    bbDemoInfoBody.append("option").text();
+    bbDemoInfoBody.append("option").text(`${key}:${value}`);
+    //nothing shows, 
   });
   //d3.json(bbData).then(function(data) {
   //lets get demographics
   //const bbParticipantDemo = data.metadata;
-})
-};
+}//parenthesis removed here to make code sound
+;//brace removed here to make code sound.
 // Fetch the JSON data and console log it
 d3.json(bbSamples).then(function(data) {
   console.log(data);
