@@ -24,6 +24,10 @@ d3.json(bbData).then(function(data) {
                 //dropdown shows!! but no bbIDs yet...I was calling wrong variable!
                 .attr("value", bbParticipantDemos.id);//holds/choice of bbID, but no text yet...works!
 });//missing a semicolon
+  const primeroBB = bbParticipants[0];
+  showDemographics(primeroBB);
+  showUniqueSamples(primeroBB);
+  showSomeBubbles(primeroBB);
 });//why does it not show? got it!! needed to "start" our function "init"
 };
 //inorder for our drop down to show each participant will use optionchanged that was provided.
@@ -40,15 +44,10 @@ function optionChanged(chosenParticipant) {
       const selectedParticipant = bbParticipants.filter(participant => participant.id == chosenParticipant);
       const selectedParticipantSample = bbParticipantSamples.filter(participantSample => participantSample.id == chosenParticipant);
       //now we tell function what to do..or call other function
-      ////showDemographics(selectedParticipant[0])
-      ////showUniqueSamples(selectedParticipantSample[0])//why does [0] make it show even when its another number?
-      ////showSomeBubbles(selectedParticipantSample[0])
+      showDemographics(selectedParticipant[0])
+      showUniqueSamples(selectedParticipantSample[0])//why does [0] make it show even when its another number?
+      showSomeBubbles(selectedParticipantSample[0])
       //^demos dont show..change to [0]..the array format makes us change how to pass object!
-      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      const primeroBB = bbParticipants[0];
-      showDemographics(primeroBB)
-      showUniqueSamples(primeroBB)
-      showSomeBubbles(primeroBB)
 });
 };//move brace here to make code sound
 init();
@@ -106,7 +105,7 @@ function showUniqueSamples(selectedParticipantSample) {
 //so close!! its in ascending order, i want it descending, assuming from orientation..
 //quick save, need to keep reverse() in my pocket.
   Plotly.newPlot('bar', barData, {
-    title: 'Top 10 OTUs in Individuals'
+    title: 'Top 10 OTUs of Participant'
   });
   };//)} deleted to troubleshoot..
 //barchart works!!
@@ -144,10 +143,13 @@ function showSomeBubbles(selectedParticipantSample) {
   var bubbleData = [trace1];
   
   var layout = {
-    title: 'Marker Size and Color',
+    title: 'OTU Marker Size and Color',
     showlegend: false,
     height: 600,
-    width: 1200
+    width: 1200,
+    xaxis: {//need to match challenge example
+      title:'OTU ID'
+    }
   };
   
   Plotly.newPlot('bubble', bubbleData, layout);
