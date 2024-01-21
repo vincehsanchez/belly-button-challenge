@@ -104,7 +104,7 @@ function showUniqueSamples(selectedParticipantSample) {
 //barchart works!!
 //lets get bubbling
 //https://plotly.com/javascript/bubble-charts/
-function showUniqueSamples(selectedParticipantSample) {
+function showSomeBubbles(selectedParticipantSample) {
   const bbSamples = d3.select("#bubble");
   bbSamples.html("");
   //no slicing, we want all
@@ -112,23 +112,32 @@ function showUniqueSamples(selectedParticipantSample) {
   const bbSampleValues = selectedParticipantSample.sample_values;//yvalues and marker size
   const bbSampleLabels = selectedParticipantSample.otu_labels;//text values only
   //here we want to modify x-alues and not have to jump between desc and asce (hope)..worked!
-  console.log(top10SampleValues); //works!
-  console.log(top10SampleIDs);
-  console.log(moddySampleIDs);
-  let barData = [{
-    //need to fix rotation/orientation, y before x...
-    //https://plotly.com/javascript/horizontal-bar-charts/
-    y: moddySampleIDs,
-    x: top10SampleValues,
-    orientation: 'h',
-    //^^we are not using forloop, remove "object.keys"^^
-    type: 'bar'
- }];
-//so close!! its in ascending order, i want it descending, assuming from orientation..
-//quick save, need to keep reverse() in my pocket.
-  Plotly.newPlot('bar', barData, {
-    title: 'Top 10 OTUs in Individuals'
-  });
+  console.log(bbSampleIDs); //works!
+  console.log(bbSampleValues);
+  console.log(bbSampleLabels);
+  //bubble chart
+  var trace1 = {
+    x: [1, 2, 3, 4],
+    y: [10, 11, 12, 13],
+    mode: 'markers',
+    marker: {
+      color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
+      //^i think we can leave this^^
+      opacity: [1, 0.8, 0.6, 0.4],//i think we can leave this
+      size: bbSampleValues
+    }
+  };
+  
+  var bubbleData = [trace1];
+  
+  var layout = {
+    title: 'Marker Size and Color',
+    showlegend: false,
+    height: 600,
+    width: 600
+  };
+  
+  Plotly.newPlot('bubble', bubbleData, layout);
   };//)} deleted to troubleshoot..
 const bbData = 
   "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
