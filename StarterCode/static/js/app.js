@@ -105,19 +105,12 @@ function showUniqueSamples(selectedParticipantSample) {
 //lets get bubbling
 //https://plotly.com/javascript/bubble-charts/
 function showUniqueSamples(selectedParticipantSample) {
-  const bbSamples = d3.select("#bar");
+  const bbSamples = d3.select("#bubble");
   bbSamples.html("");
-  //////Object.entries(selectedParticipantSample).forEach(([key,value]) =>{
-    /////bbSamples.append("p").text(`${key}:${value}`);
-    //^^do not need to use, want to plot once..not on every recuurance.^^
-  //now we slice!
-  const top10SampleValues = selectedParticipantSample.sample_values.slice(0,10).reverse();
-  const top10SampleIDs = selectedParticipantSample.otu_ids.slice(0,10).reverse();
-  //^adding reverse() because changing orientation changes the bar arrangement..^
-  //const partOneIDs = Object.keys(top10SampleValues);
-  //const moddySampleIDs = partOneIDs.map(id=>`OTU ${id}`);
-  //^^two lines above put us in unwanted loop^^
-  const moddySampleIDs = top10SampleIDs.map(id=>`OTU ${id}`);
+  //no slicing, we want all
+  const bbSampleIDs = selectedParticipantSample.otu_ids;
+  const bbSampleValues = selectedParticipantSample.sample_values;
+  const bbSampleLabels = selectedParticipantSample.otu_labels;
   //here we want to modify x-alues and not have to jump between desc and asce (hope)..worked!
   console.log(top10SampleValues); //works!
   console.log(top10SampleIDs);
