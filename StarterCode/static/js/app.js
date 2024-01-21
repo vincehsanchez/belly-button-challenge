@@ -58,10 +58,12 @@ init(){
         dropdownMenu.append("option")
                     .text(bbParticipantDemos.id)
                     .attr("value", bbParticipantDemos.id);
+      //lets only show first (940)
+      const primeroBB = bbParticipants[0];
+
       });
     });
 }; //keep this here to make sure its running...
-////////////////////////////////////////////////////////////////////////////////////////////////////
 //lets get demographics
 function showDemographics(selectedParticipant) {//using chosen participant value from function before
   const bbDemoInfoBody = d3.select("#sample-metadata");//where i want it to show
