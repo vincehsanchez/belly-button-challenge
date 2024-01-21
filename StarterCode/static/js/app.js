@@ -73,19 +73,21 @@ function showDemographics(selectedParticipant) {//using chosen participant value
 function showUniqueSamples(selectedParticipantSample) {
   const bbSamples = d3.select("#bar");
   bbSamples.html("");
-  Object.entries(selectedParticipantSample).forEach(([key,value]) =>{
-    bbSamples.append("p").text(`${key}:${value}`);
+  //////Object.entries(selectedParticipantSample).forEach(([key,value]) =>{
+    /////bbSamples.append("p").text(`${key}:${value}`);
     //looks good!
   //now we slice!
   const top10SampleValues = selectedParticipantSample.sample_values.slice(0,10);
-  //console.log(top10SampleValues); works!
+  const top10SampleIDs = selectedParticipantSample.otu_ids.slice(0,10);
+  console.log(top10SampleValues); //works!
+  console.log(top10SampleIDs);
   let barData = [{
-    x: Object.keys(sampleValueID),
+    x: Object.keys(top10SampleIDs),
     y: Object.values(top10SampleValues),
     type: 'bar'
  }];
 
-  Plotly.newPlot('myDivBar', barData, {
+  Plotly.newPlot('bar', barData, {
     title: 'Top 10 OTUs in Individuals'
   });
   })};
