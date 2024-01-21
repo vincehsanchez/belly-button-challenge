@@ -123,7 +123,7 @@ function showSomeBubbles(selectedParticipantSample) {
     mode: 'markers',
     marker: {
       color: ['rgb(0, 100, 40)', 'rgb(33, 100, 40)',  'rgb(66, 100, 40)', 'rgb(99, 100,40)'],
-      //^i think we can leave this^^
+      //^need to fix black color^
       opacity: [1, 0.8, 0.6, 0.4],//i think we can leave this
       size: bbSampleValues
     }
@@ -142,15 +142,15 @@ function showSomeBubbles(selectedParticipantSample) {
   };
 const bbData = 
   "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
-d3.json(bbData).then((data) =>{
+//d3.json(bbData).then((data) =>{
 //fetching data
-const bbParticipantSamples = data.samples;
+//const bbParticipantSamples = data.samples;
 //i did need the stuff i deleted..thought it was a dead end...
-const bbParticipants = data.names;
+//const bbParticipants = data.names;
 //metadata objects have 0 in front..names and samples have unique number..so do we use names for samples?
-console.log(bbParticipantSamples)
-console.log(bbParticipants)
+//console.log(bbParticipantSamples)
+//console.log(bbParticipants)
 //const selectedParticipantSample = data.samples.filter(sampleObj => sampleObj.id == selectedParticipantSample);
 //console.log(selectedParticipantSample);
-});
+//});
 
