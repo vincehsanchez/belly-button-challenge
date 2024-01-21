@@ -40,33 +40,21 @@ function optionChanged(chosenParticipant) {
       const selectedParticipant = bbParticipants.filter(participant => participant.id == chosenParticipant);
       const selectedParticipantSample = bbParticipantSamples.filter(participantSample => participantSample.id == chosenParticipant);
       //now we tell function what to do..or call other function
-      showDemographics(selectedParticipant[0])
-      showUniqueSamples(selectedParticipantSample[0])//why does [0] make it show even when its another number?
-      showSomeBubbles(selectedParticipantSample[0])
+      ////showDemographics(selectedParticipant[0])
+      ////showUniqueSamples(selectedParticipantSample[0])//why does [0] make it show even when its another number?
+      ////showSomeBubbles(selectedParticipantSample[0])
       //^demos dont show..change to [0]..the array format makes us change how to pass object!
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      const primeroBB = bbParticipants[0];
+      showDemographics(primeroBB)
+      showUniqueSamples(primeroBB)
+      showSomeBubbles(primeroBB)
 });
 };//move brace here to make code sound
-init(){
-  //https://www.basedash.com/blog/init-function-in-javascript-explained
-  //init() can be our default/deferred function
-  const dropdownMenu = d3.selectAll("#selDataset");
-  const bbData = 
-    "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
-    d3.json(bbData).then(function(data) {
-      const bbParticipants = data.metadata;
-      bbParticipants.forEach(bbParticipantDemos =>{
-        dropdownMenu.append("option")
-                    .text(bbParticipantDemos.id)
-                    .attr("value", bbParticipantDemos.id);
-      //lets only show first (940)
-      const primeroBB = bbParticipants[0];
-      //copy and paste?
-      showDemographics(selectedParticipant[0])
-      showUniqueSamples(selectedParticipantSample[0])
-      showSomeBubbles(selectedParticipantSample[0])
-      });
-    });
-}; //keep this here to make sure its running...
+init();
+//https://www.basedash.com/blog/init-function-in-javascript-explained
+//init() can be our default/deferred function
+//keep this here to make sure its running...
 //lets get demographics
 function showDemographics(selectedParticipant) {//using chosen participant value from function before
   const bbDemoInfoBody = d3.select("#sample-metadata");//where i want it to show
@@ -134,6 +122,11 @@ function showSomeBubbles(selectedParticipantSample) {
   console.log(bbSampleIDs);
   console.log(bbSampleValues);
   console.log(bbSampleLabels);
+
+  // Define a color scale based on the values
+  var colorScale = d3.scaleSequential(d3.interpolateViridis)
+                    .domain([0, d3.max(bbSampleValues)]);//suggested by BCS
+  
   //bubble chart
   var trace1 = {
     x: bbSampleIDs,
@@ -141,7 +134,7 @@ function showSomeBubbles(selectedParticipantSample) {
     text: bbSampleLabels,
     mode: 'markers',
     marker: {
-      color: ['rgb(0, 100, 40)', 'rgb(33, 100, 40)',  'rgb(66, 100, 40)', 'rgb(99, 100,40)'],
+      color: bbSampleValues.map(value => colorScale(value)),//suggested by BCS
       //^need to fix black color^
       opacity: [1, 0.8, 0.6, 0.4],//i think we can leave this
       size: bbSampleValues
@@ -159,17 +152,3 @@ function showSomeBubbles(selectedParticipantSample) {
   
   Plotly.newPlot('bubble', bubbleData, layout);
   };
-//const bbData = 
-  //"https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
-//d3.json(bbData).then((data) =>{
-//fetching data
-//const bbParticipantSamples = data.samples;
-//i did need the stuff i deleted..thought it was a dead end...
-//const bbParticipants = data.names;
-//metadata objects have 0 in front..names and samples have unique number..so do we use names for samples?
-//console.log(bbParticipantSamples)
-//console.log(bbParticipants)
-//const selectedParticipantSample = data.samples.filter(sampleObj => sampleObj.id == selectedParticipantSample);
-//console.log(selectedParticipantSample);
-//});
-
