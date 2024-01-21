@@ -63,9 +63,6 @@ function showDemographics(selectedParticipant) {//using chosen participant value
     bbDemoInfoBody.append("p").text(`${key}:${value}`);//changed "option" to "p" because we dont need another dropdown
     //nothing...wait! 0:[object Object]
   });
-  //d3.json(bbData).then(function(data) {
-  //lets get demographics
-  //const bbParticipantDemo = data.metadata;
 }//parenthesis removed here to make code sound
 ;//brace removed here to make code sound.
 //nowww we can start counting for EACH person by finding the top 10 highest sample_values
@@ -76,15 +73,16 @@ function showUniqueSamples(selectedParticipantSample) {
   //////Object.entries(selectedParticipantSample).forEach(([key,value]) =>{
     /////bbSamples.append("p").text(`${key}:${value}`);
     //^^do not need to use, want to plot once..not on every recuurance.^^
-    //looks good!
   //now we slice!
   const top10SampleValues = selectedParticipantSample.sample_values.slice(0,10);
   const top10SampleIDs = selectedParticipantSample.otu_ids.slice(0,10);
   console.log(top10SampleValues); //works!
   console.log(top10SampleIDs);
   let barData = [{
-    x: Object.keys(top10SampleIDs),
-    y: Object.values(top10SampleValues),
+    x: top10SampleValues,
+    y: top10SampleIDs,
+    //^^we are not using forloop, remove "object.keys"^^
+
     type: 'bar'
  }];
 
@@ -92,7 +90,7 @@ function showUniqueSamples(selectedParticipantSample) {
     title: 'Top 10 OTUs in Individuals'
   });
   };//)} deleted to troubleshoot..
-
+//barchart shows!! but no ids and its not rotated.
 const bbData = 
   "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 d3.json(bbData).then((data) =>{
