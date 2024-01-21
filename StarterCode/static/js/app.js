@@ -111,14 +111,14 @@ function showSomeBubbles(selectedParticipantSample) {
   const bbSampleIDs = selectedParticipantSample.otu_ids;//xvalues and marker colors
   const bbSampleValues = selectedParticipantSample.sample_values;//yvalues and marker size
   const bbSampleLabels = selectedParticipantSample.otu_labels;//text values only
-  //here we want to modify x-alues and not have to jump between desc and asce (hope)..worked!
-  console.log(bbSampleIDs); //works!
+  console.log(bbSampleIDs);
   console.log(bbSampleValues);
   console.log(bbSampleLabels);
   //bubble chart
   var trace1 = {
-    x: [1, 2, 3, 4],
-    y: [10, 11, 12, 13],
+    x: bbSampleIDs,
+    y: bbSampleValues,
+    text: bbSampleLabels,
     mode: 'markers',
     marker: {
       color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
@@ -138,7 +138,7 @@ function showSomeBubbles(selectedParticipantSample) {
   };
   
   Plotly.newPlot('bubble', bubbleData, layout);
-  };//)} deleted to troubleshoot..
+  };
 const bbData = 
   "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 d3.json(bbData).then((data) =>{
