@@ -55,7 +55,6 @@ function optionChanged(chosenParticipant) {
 init();
 //https://www.basedash.com/blog/init-function-in-javascript-explained
 //init() can be our default/deferred function
-//keep this here to make sure its running...
 //lets get demographics
 function showDemographics(selectedParticipant) {//using chosen participant value from function before
   const bbDemoInfoBody = d3.select("#sample-metadata");//where i want it to show
