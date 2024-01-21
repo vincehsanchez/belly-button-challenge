@@ -60,13 +60,14 @@ function showDemographics(selectedParticipant) {//using chosen participant value
     //console.log(participant)//lets see why only "0" is showing
     //key and value for each participant
     //"option" to tell D3 we want it to add space for data to show
-    bbDemoInfoBody.append("p").text(`${key}:${value}`);//changed "option" to "p" because we dont need another dropdown
+    bbDemoInfoBody.append("p").text(`${key}:${value}`);
+    //^^changed "option" to "p" because we dont need another dropdown^^
     //nothing...wait! 0:[object Object]
   });
 }//parenthesis removed here to make code sound
 ;//brace removed here to make code sound.
 //nowww we can start counting for EACH person by finding the top 10 highest sample_values
-//I think we can assume that there are no dulicate otu_ids...per BCS
+//we can assume that there are no dulicate otu_ids...per BCS
 function showUniqueSamples(selectedParticipantSample) {
   const bbSamples = d3.select("#bar");
   bbSamples.html("");
@@ -76,13 +77,16 @@ function showUniqueSamples(selectedParticipantSample) {
   //now we slice!
   const top10SampleValues = selectedParticipantSample.sample_values.slice(0,10);
   const top10SampleIDs = selectedParticipantSample.otu_ids.slice(0,10);
+  const partOneIDs = Object.keys(top10SampleValues);
+  const moddySampleIDs = partOneIDs.map(id=>`OTU ${id}`);
+  //here we want to modify x-alues and not have to jump between desc and asce (hope)
   console.log(top10SampleValues); //works!
   console.log(top10SampleIDs);
   let barData = [{
-    x: top10SampleValues,
-    y: top10SampleIDs,
+    x: Object.keys(top10SampleIDs),//Object.values(top10SampleIDs)
+    y: top10SampleValues,//Object.values(top10SampleValues)
     //^^we are not using forloop, remove "object.keys"^^
-
+    //okay i think we still need them...
     type: 'bar'
  }];
 
