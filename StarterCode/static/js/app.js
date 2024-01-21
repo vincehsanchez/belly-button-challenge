@@ -75,8 +75,9 @@ function showUniqueSamples(selectedParticipantSample) {
     /////bbSamples.append("p").text(`${key}:${value}`);
     //^^do not need to use, want to plot once..not on every recuurance.^^
   //now we slice!
-  const top10SampleValues = selectedParticipantSample.sample_values.slice(0,10);
-  const top10SampleIDs = selectedParticipantSample.otu_ids.slice(0,10);
+  const top10SampleValues = selectedParticipantSample.sample_values.slice(0,10).reverse();
+  const top10SampleIDs = selectedParticipantSample.otu_ids.slice(0,10).reverse();
+  //^adding reverse() because changing orientation changes the bar arrangement..^
   //const partOneIDs = Object.keys(top10SampleValues);
   //const moddySampleIDs = partOneIDs.map(id=>`OTU ${id}`);
   //^^two lines above put us in unwanted loop^^
@@ -86,17 +87,21 @@ function showUniqueSamples(selectedParticipantSample) {
   console.log(top10SampleIDs);
   console.log(moddySampleIDs);
   let barData = [{
-    x: moddySampleIDs,
-    y: top10SampleValues,
+    //need to fix rotation/orientation, y before x...
+    //https://plotly.com/javascript/horizontal-bar-charts/
+    y: moddySampleIDs,
+    x: top10SampleValues,
+    orientation: 'h',
     //^^we are not using forloop, remove "object.keys"^^
     type: 'bar'
  }];
-
+//so close!! its in ascending order, i want it descending, assuming from orientation..
+//quick save, need to keep reverse() in my pocket.
   Plotly.newPlot('bar', barData, {
     title: 'Top 10 OTUs in Individuals'
   });
   };//)} deleted to troubleshoot..
-//barchart shows!! 
+//barchart works!! 
 const bbData = 
   "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 d3.json(bbData).then((data) =>{
