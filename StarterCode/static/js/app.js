@@ -122,7 +122,7 @@ function showSomeBubbles(selectedParticipantSample) {
     text: bbSampleLabels,
     mode: 'markers',
     marker: {
-      color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
+      color: ['rgb(0, 100, 40)', 'rgb(33, 100, 40)',  'rgb(66, 100, 40)', 'rgb(99, 100,40)'],
       //^i think we can leave this^^
       opacity: [1, 0.8, 0.6, 0.4],//i think we can leave this
       size: bbSampleValues
@@ -135,7 +135,7 @@ function showSomeBubbles(selectedParticipantSample) {
     title: 'Marker Size and Color',
     showlegend: false,
     height: 600,
-    width: 2000
+    width: 1200
   };
   
   Plotly.newPlot('bubble', bubbleData, layout);
