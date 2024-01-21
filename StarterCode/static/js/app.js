@@ -46,7 +46,21 @@ function optionChanged(chosenParticipant) {
       //^demos dont show..change to [0]..the array format makes us change how to pass object!
 });
 };//move brace here to make code sound
-init(); //keep this here to make sure its running...
+init(){
+  //https://www.basedash.com/blog/init-function-in-javascript-explained
+  //init() can be our default/deferred function
+  const dropdownMenu = d3.selectAll("#selDataset");
+  const bbData = 
+    "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
+    d3.json(bbData).then(function(data) {
+      const bbParticipants = data.metadata;
+      bbParticipants.forEach(bbParticipantDemos =>{
+        dropdownMenu.append("option")
+                    .text(bbParticipantDemos.id)
+                    .attr("value", bbParticipantDemos.id);
+      });
+    });
+}; //keep this here to make sure its running...
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //lets get demographics
 function showDemographics(selectedParticipant) {//using chosen participant value from function before
