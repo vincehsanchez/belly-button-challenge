@@ -75,6 +75,7 @@ function showUniqueSamples(selectedParticipantSample) {
   bbSamples.html("");
   //////Object.entries(selectedParticipantSample).forEach(([key,value]) =>{
     /////bbSamples.append("p").text(`${key}:${value}`);
+    //^^do not need to use, want to plot once..not on every recuurance.^^
     //looks good!
   //now we slice!
   const top10SampleValues = selectedParticipantSample.sample_values.slice(0,10);
@@ -90,7 +91,7 @@ function showUniqueSamples(selectedParticipantSample) {
   Plotly.newPlot('bar', barData, {
     title: 'Top 10 OTUs in Individuals'
   });
-  })};
+  };//)} deleted to troubleshoot..
 
 const bbData = 
   "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
