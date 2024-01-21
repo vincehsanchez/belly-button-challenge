@@ -86,10 +86,9 @@ function showUniqueSamples(selectedParticipantSample) {
   console.log(top10SampleIDs);
   console.log(moddySampleIDs);
   let barData = [{
-    x: moddySampleIDs,//Object.keys(top10SampleIDs)
-    y: top10SampleValues,//Object.values(top10SampleValues)
+    x: moddySampleIDs,
+    y: top10SampleValues,
     //^^we are not using forloop, remove "object.keys"^^
-    //okay i think we still need them...
     type: 'bar'
  }];
 
@@ -97,7 +96,7 @@ function showUniqueSamples(selectedParticipantSample) {
     title: 'Top 10 OTUs in Individuals'
   });
   };//)} deleted to troubleshoot..
-//barchart shows!! but no ids and its not rotated.
+//barchart shows!! 
 const bbData = 
   "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 d3.json(bbData).then((data) =>{
