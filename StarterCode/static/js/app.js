@@ -60,7 +60,10 @@ init(){
                     .attr("value", bbParticipantDemos.id);
       //lets only show first (940)
       const primeroBB = bbParticipants[0];
-
+      //copy and paste?
+      showDemographics(selectedParticipant[0])
+      showUniqueSamples(selectedParticipantSample[0])
+      showSomeBubbles(selectedParticipantSample[0])
       });
     });
 }; //keep this here to make sure its running...
