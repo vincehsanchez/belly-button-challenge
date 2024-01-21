@@ -42,6 +42,7 @@ function optionChanged(chosenParticipant) {
       //now we tell function what to do..or call other function
       showDemographics(selectedParticipant[0])
       showUniqueSamples(selectedParticipantSample[0])//why does [0] make it show even when its another number?
+      showSomeBubbles(selectedParticipantSample[0])
       //^demos dont show..change to [0]..the array format makes us change how to pass object!
 });
 };//move brace here to make code sound
@@ -134,7 +135,7 @@ function showSomeBubbles(selectedParticipantSample) {
     title: 'Marker Size and Color',
     showlegend: false,
     height: 600,
-    width: 600
+    width: 2000
   };
   
   Plotly.newPlot('bubble', bubbleData, layout);
