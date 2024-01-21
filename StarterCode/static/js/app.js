@@ -77,13 +77,16 @@ function showUniqueSamples(selectedParticipantSample) {
   //now we slice!
   const top10SampleValues = selectedParticipantSample.sample_values.slice(0,10);
   const top10SampleIDs = selectedParticipantSample.otu_ids.slice(0,10);
-  const partOneIDs = Object.keys(top10SampleValues);
-  const moddySampleIDs = partOneIDs.map(id=>`OTU ${id}`);
-  //here we want to modify x-alues and not have to jump between desc and asce (hope)
+  //const partOneIDs = Object.keys(top10SampleValues);
+  //const moddySampleIDs = partOneIDs.map(id=>`OTU ${id}`);
+  //^^two lines above put us in unwanted loop^^
+  const moddySampleIDs = top10SampleIDs.map(id=>`OTU ${id}`);
+  //here we want to modify x-alues and not have to jump between desc and asce (hope)..worked!
   console.log(top10SampleValues); //works!
   console.log(top10SampleIDs);
+  console.log(moddySampleIDs);
   let barData = [{
-    x: Object.keys(top10SampleIDs),//Object.values(top10SampleIDs)
+    x: moddySampleIDs,//Object.keys(top10SampleIDs)
     y: top10SampleValues,//Object.values(top10SampleValues)
     //^^we are not using forloop, remove "object.keys"^^
     //okay i think we still need them...
