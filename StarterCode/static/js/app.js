@@ -14,6 +14,7 @@ d3.json(bbData).then(function(data) {
   //lets get names
   const bbParticipants = data.metadata;//why red underline? parenthesis was missing..
   //^^changed to metadata because the info for each and not only names^^
+  const bbParticipantSamples = data.samples;
   //get through each name
   bbParticipants.forEach(bbParticipantDemos =>{
     ///data.metadata.id if we need to get the BBID...bbParticipants.id...
@@ -25,9 +26,10 @@ d3.json(bbData).then(function(data) {
                 .attr("value", bbParticipantDemos.id);//holds/choice of bbID, but no text yet...works!
 });//missing a semicolon
   const primeroBB = bbParticipants[0];
+  const primeroParticipantSample = bbParticipantSamples.filter(primeroParticipantSample => primeroParticipantSample.id == 940);//screw it, use 940
   showDemographics(primeroBB);
-  showUniqueSamples(primeroBB);
-  showSomeBubbles(primeroBB);
+  showUniqueSamples(primeroParticipantSample[0]);
+  showSomeBubbles(primeroParticipantSample[0]);
 });//why does it not show? got it!! needed to "start" our function "init"
 };
 //inorder for our drop down to show each participant will use optionchanged that was provided.
