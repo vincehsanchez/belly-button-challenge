@@ -23,12 +23,13 @@ https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Inter
 
 **Bar Chart**
 
-Create a bubble chart that displays each sample.
-Use otu_ids for the x values.
-Use sample_values for the y values.
-Use sample_values for the marker size.
-Use otu_ids for the marker colors.
-Use otu_labels for the text values.
+1. Create a bubble chart that displays each sample.
+- NOTE:
+  - Use otu_ids for the x values.
+  - Use sample_values for the y values.
+  - Use sample_values for the marker size.
+  - Use otu_ids for the marker colors.
+  - Use otu_labels for the text values.
 
 **Bubble Chart**
 
