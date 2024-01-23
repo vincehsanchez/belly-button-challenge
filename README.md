@@ -33,7 +33,9 @@ https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Inter
 
 **Bubble Chart**
 
-Display the sample metadata, i.e., an individual's demographic information.
-Display each key-value pair from the metadata JSON object somewhere on the page.
+1. Display the sample metadata.
+   - i.e., an individual's demographic information.
+     
+2. Display each key-value pair from the metadata JSON object somewhere on the page.
 
 
