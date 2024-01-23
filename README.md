@@ -24,7 +24,7 @@ https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Inter
 **Bar Chart**
 
 1. Create a bubble chart that displays each sample.
-- NOTE:
+ NOTE:
   - Use otu_ids for the x values.
   - Use sample_values for the y values.
   - Use sample_values for the marker size.
